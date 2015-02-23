@@ -1,0 +1,13 @@
+# Aliases
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -lAh'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias rmdir='rmdir -v'
+alias mkdir='mkdir -p'
+alias chmod='chmod -c'
+alias chown='chown -c'
+alias pacman='pacman --color=auto'
+alias dgit='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
