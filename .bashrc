@@ -12,12 +12,20 @@ fi
 if [ $(whoami) == "root" ]; then
     COLOR_USERHOST="\[\033[1;31m\]"
 else
-    COLOR_USERHOST="\[\033[1;33m\]"
+    if [[ -z "$SSH_CLIENT" ]]; then
+        COLOR_USERHOST="\[\033[1;32m\]"
+    else
+        COLOR_USERHOST="\[\033[1;33m\]"
+    fi
 fi
 COLOR_PATH="\[\033[0;34m\]"
 COLOR_RESET="\[\033[0;m\]"
 
-PS1="$COLOR_USERHOST\u@\h $COLOR_PATH\w$COLOR_RESET\n\\$ "
+if [[ -z "$SSH_CLIENT" ]]; then
+    PS1="$COLOR_USERHOST\u $COLOR_PATH\w$COLOR_RESET\n\\$ "
+else
+    PS1="$COLOR_USERHOST\u@\h $COLOR_PATH\w$COLOR_RESET\n\\$ "
+fi
 
 # History: ignore duplicates and cmds starting with spaces
 export HISTCONTROL=ignoreboth
