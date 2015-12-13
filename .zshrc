@@ -39,7 +39,9 @@ unsetopt beep
 unsetopt notify
 
 # Import coloring for ls
-eval $(dircolors ~/.dircolors)
+if [ $(uname -s) = "Linux" ]; then
+    eval $(dircolors ~/.dircolors)
+fi
 
 # Source aliases
 [[ -f ~/.aliases ]] && . ~/.aliases

@@ -19,3 +19,9 @@ export LC_IDENTIFICATION="de_DE.UTF-8"
 
 # Other variables
 export EDITOR="vim"
+
+# LSCOLORS for non-Linux systems
+# (on Linux, this is handled via dircolors)
+if [ $(uname -s) = "FreeBSD" ]; then
+    export LSCOLORS=ExGxFxdxCxDxDxxbxdAeAe
+fi
