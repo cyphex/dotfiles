@@ -21,6 +21,7 @@ export LC_IDENTIFICATION="de_DE.UTF-8"
 
 # Other env variables
 export EDITOR=vim
+export PAGER=less
 
 # If we're local and on tty1, start X
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
