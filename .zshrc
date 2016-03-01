@@ -43,5 +43,8 @@ if [ $(uname -s) = "Linux" ]; then
     eval $(dircolors ~/.dircolors)
 fi
 
+# Disable completion of hostnames from /etc/hosts
+zstyle ':completion:*' hosts off
+
 # Source aliases
 [[ -f ~/.aliases ]] && . ~/.aliases
